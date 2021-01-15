@@ -135,7 +135,7 @@ public:
     for (ImageDimensionType i = 0; i < ImageDimension; ++i)
       for (ImageDimensionType j = i; j < ImageDimension; ++j)
         D(i, j) = tensor(i, j) * this->invSpacing[i] * this->invSpacing[j];
-    this->Stencil(Dispatch<ImageDimension>(), D, offsets, stencil.second);
+    this->Stencil(const Dispatch<ImageDimension>(), D, offsets, stencil.second);
 
     InternalSizeT * yIndex = &stencil.first[0];
 
